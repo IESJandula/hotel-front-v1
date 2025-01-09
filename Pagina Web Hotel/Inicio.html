@@ -3,113 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel La Casa Azul</title>
+    <title>La Casa Azul - Inicio</title>
     <link rel="stylesheet" href="inicio.css">
 </head>
 <body>
-    <!-- Encabezado -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="img/imagenLogo.jpg" alt="LogoCasaAzul">
-                <h1 class="titulo">La Casa Azul</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#habitaciones">Habitaciones</a></li>
-                    <li><a href="#">Galería</a></li>
-                    <li><a href="#">Restaurante</a></li>
-                    <li><a href="#">Ofertas</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="reservarAhora">
-                <button>Reservar Ahora</button>
-            </div>
-        </div>
-    </header>
 
-    <!-- Sección principal -->
-    <main>
-        <div class="video-container">
-            <video autoplay muted loop>
-                <source src="img/videoInicio.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
+<!-- Barra de navegación -->
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            <img src="img/imagenLogo.jpg" alt="La Casa Azul">
+            <h1 class="titulo">La Casa Azul</h1>
         </div>
-        <div class="booking-form">
-            <form>
-                <div class="horizontal-group">
-                    <label for="checkin">Check In</label>
-                    <input type="date" id="checkin" name="checkin">
-                    <label for="checkout">Check Out</label>
-                    <input type="date" id="checkout" name="checkout">
-                </div>
-                <label for="nacionalidad">Nacionalidad:</label>
-                <input type="text" id="nacionalidad" name="nacionalidad">
-                <label for="adultos">Adultos 12+:</label>
-                <input type="number" id="adultos" name="adultos" min="1">
-                <label for="niños">Niños 0-12:</label>
-                <input type="number" id="niños" name="niños" min="0">
-                <label for="promo">Código Promocional:</label>
-                <input type="text" id="promo" name="promo">
-                <button type="submit">Ver Disponibilidad</button>
-            </form>
-        </div>
-    </main>
-    <!-- Sección de habitaciones -->
-    <section id="habitaciones" class="habitaciones">
-    
-        <div class="habitacion">
-            <img src="img/616037799.jpg" alt="Habitación Matrimonio">
-            <div class="info-habitacion">
-                <h3>Habitación Matrimonio</h3>
-                <p>Capacidad: 2 personas</p>
-                <p>Precio: 60€/noche</p>
-                <button>Reservar</button>
-            </div>
-        </div>
-        <div class="habitacion">
-            <img src="img/616037805.jpg" alt="Habitación Doble">
-            <div class="info-habitacion">
-                <h3>Habitación Doble</h3>
-                <p>Capacidad: 2 personas</p>
-                <p>Precio: 80€/noche</p>
-                <button>Reservar</button>
-            </div>
-        </div>
-        <div class="habitacion">
-            <img src="img/616037818.jpg" alt="Suite">
-            <div class="info-habitacion">
-                <h3>Suite</h3>
-                <p>Capacidad: 3 personas</p>
-                <p>Precio: 150€/noche</p>
-                <button>Reservar</button>
-            </div>
-        </div>
-    </section>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#habitaciones">Habitaciones</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#restaurante">Restaurante</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    <!-- Sección de contacto -->
-    <section id="contacto" class="contacto">
-        <h2>Contáctanos</h2>
-        <form id="contactForm">
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <input type="email" name="email" placeholder="Tu correo electrónico" required>
-            <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-            <button type="submit">Enviar</button>
+<!-- Video de fondo con formulario superpuesto -->
+<section class="hero">
+    <video autoplay muted loop class="background-video">
+        <source src="img/videoInicio.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+    </video>
+
+    <div class="form-container">
+        <h2>Busca tu habitación ideal</h2>
+        <form id="searchForm">
+            <label for="checkin">Fecha de entrada:</label>
+            <input type="date" id="checkin" name="checkin" required>
+
+            <label for="checkout">Fecha de salida:</label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <label for="personas">Número de personas:</label>
+            <input type="number" id="personas" name="personas" min="1" required>
+
+            <label>Tipo de habitación:</label>
+            <div class="room-types">
+                <input type="checkbox" id="matrimonial" name="tipo" value="Matrimonial">
+                <label for="matrimonial">Matrimonial</label>
+                <input type="checkbox" id="doble" name="tipo" value="Doble">
+                <label for="doble">Doble</label>
+                <input type="checkbox" id="suite" name="tipo" value="Suite">
+                <label for="suite">Suite</label>
+            </div>
+
+            <button type="submit">Ver Disponibilidad</button>
         </form>
-        <div id="message"></div>
-    </section>
+    </div>
+</section>
 
-    <!-- Botón flotante para volver al inicio -->
-    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+<!-- Sección para mostrar habitaciones disponibles -->
+<section id="habitaciones" class="habitaciones">
 
-    <!-- Script para el botón de volver al inicio -->
-    <script>
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
+    <div class="habitacion">
+        <img src="img/616037799.jpg" alt="Habitación Matrimonio">
+        <div class="info-habitacion">
+            <h3>Habitación Matrimonio</h3>
+            <p>Capacidad: 2 personas</p>
+            <p>Precio: 60€/noche</p>
+            <button>Reservar</button>
+        </div>
+    </div>
+    <div class="habitacion">
+        <img src="img/616037805.jpg" alt="Habitación Doble">
+        <div class="info-habitacion">
+            <h3>Habitación Doble</h3>
+            <p>Capacidad: 2 personas</p>
+            <p>Precio: 80€/noche</p>
+            <button>Reservar</button>
+        </div>
+    </div>
+    <div class="habitacion">
+        <img src="img/616037818.jpg" alt="Suite">
+        <div class="info-habitacion">
+            <h3>Suite</h3>
+            <p>Capacidad: 3 personas</p>
+            <p>Precio: 150€/noche</p>
+            <button>Reservar</button>
+        </div>
+    </div>
+</section>
+
+<!-- Contacto -->
+<section id="contacto">
+    <h2>Contáctanos</h2>
+    <form>
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu correo electrónico" required>
+        <textarea placeholder="Escribe tu mensaje aquí..." required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<!-- Botón flotante para volver al inicio -->
+<button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+<!-- Scripts -->
+<script>
+    const form = document.getElementById('searchForm');
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Obtener los filtros seleccionados
+        const selectedTypes = Array.from(form.elements['tipo'])
+            .filter(input => input.checked)
+            .map(input => input.value);
+
+        const habitaciones = document.querySelectorAll('.habitacion');
+
+        // Mostrar/ocultar habitaciones según los filtros seleccionados
+        habitaciones.forEach(habitacion => {
+            if (selectedTypes.length === 0 || selectedTypes.includes(habitacion.getAttribute('data-tipo'))) {
+                habitacion.style.display = 'block';
+            } else {
+                habitacion.style.display = 'none';
+            }
+        });
+    });
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
 </body>
 </html>
