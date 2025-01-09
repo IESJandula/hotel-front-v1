@@ -10,26 +10,31 @@ body {
     padding: 0;
     background-color: #000;
     color: #fff;
-    overflow-y: scroll; /* Permite el scroll vertical */
+    overflow-y: scroll;
 }
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.header-container {
+.titulo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+    color: #fff;
+}
+
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .logo {
@@ -42,154 +47,104 @@ header {
     margin-right: 10px;
 }
 
-.titulo {
-    font-family: 'Great Vibes', cursive;
-    font-size: 36px;
-    color: #fff;
-}
-
 nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
     margin: 0;
     padding: 0;
-    justify-content: center;
-    text-align: center;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 18px;
 }
 
-.reservarAhora {
-    display: flex;
-    justify-content: center;
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
-.reservarAhora button {
-    background-color: #444;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.video-container {
+/* Hero Section */
+.hero {
     position: relative;
-    width: 100%;
     height: 100vh;
     overflow: hidden;
 }
 
-video {
+.background-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.booking-form {
+.form-container {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    z-index: 2;
-}
-
-.booking-form form {
-    display: grid;
-    gap: 10px;
-}
-
-.booking-form .horizontal-group {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-}
-
-.booking-form label {
-    color: #fff;
-}
-
-.booking-form input,
-.booking-form button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-.booking-form button {
-    background-color: #444;
-    color: #fff;
-    cursor: pointer;
-}
-
-.contacto {
-    background: linear-gradient(135deg, #f0f8ff, #add8e6);
-    padding: 60px 20px;
-    text-align: center;
-    border-top: 3px solid #0044cc;
-}
-
-.contacto h2 {
-    font-size: 36px;
-    color: #003366;
-    margin-bottom: 20px;
-}
-
-.contacto form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    width: 320px;
 }
 
-.contacto form input,
-.contacto form textarea {
+.form-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.form-container form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ccc;
+    text-align: left;
+}
+
+.form-container form input,
+.form-container form button {
     width: 100%;
     padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
     font-size: 16px;
 }
 
-.contacto form button {
-    width: 100%;
-    padding: 12px;
-    background-color: #0044cc;
-    color: white;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
+.form-container form input {
+    background-color: #333;
+    color: #fff;
 }
 
-.scroll-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #0044cc;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
+.form-container form button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
     cursor: pointer;
+}
+
+.form-container form button:hover {
+    background-color: #0056b3;
+}
+
+/* Sección de Habitaciones */
+#habitaciones {
+    padding: 60px 20px;
+    background-color: #111;
+    text-align: center;
+}
+
+#habitaciones h2 {
+    font-size: 36px;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    margin-bottom: 30px;
 }
 
 .habitaciones {
@@ -256,31 +211,95 @@ video {
     font-size: 16px;
 }
 
-/* Ajuste para mostrar 3 habitaciones por fila */
+/* Botón de Volver al Inicio */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.scroll-to-top:hover {
+    background-color: #002a80;
+}
+
+/* Formulario de Contacto */
+#contacto {
+    padding: 60px 20px;
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+#contacto h2 {
+    font-size: 36px;
+    color: #0044cc;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+#contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contacto form input,
+#contacto form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#contacto form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0044cc;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#contacto form button:hover {
+    background-color: #002a80;
+}
+
+/* Media Queries */
 @media (min-width: 1024px) {
-    .habitaciones {
+    #habitaciones {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
-    }
-    .habitacion {
-        width: 100%; /* Cada habitación ocupa 100% de su celda */
     }
 }
 
-/* Ajustes para pantallas medianas */
 @media (max-width: 1024px) {
-    .habitaciones {
+    #habitaciones {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
 }
 
-/* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
-    .habitaciones .habitacion {
-        width: 100%;
-        margin: 10px 0;
+    #habitaciones {
+        display: block;
     }
 }
