@@ -65,6 +65,19 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+.reservarAhora {
+    display: flex;
+    justify-content: center;
+}
+
+.reservarAhora button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
 /* Hero Section */
 .hero {
     position: relative;
