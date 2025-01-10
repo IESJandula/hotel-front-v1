@@ -6,7 +6,7 @@
     <title>La Casa Azul - Inicio</title>
     <link rel="stylesheet" href="inicio.css">
 </head>
-<body>
+<body id="inicio">
 
 <!-- Barra de navegación -->
 <header>
@@ -21,7 +21,8 @@
                 <li><a href="#habitaciones">Habitaciones</a></li>
                 <li><a href="#galeria">Galería</a></li>
                 <li><a href="#restaurante">Restaurante</a></li>
-                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#formulareserva">Reserva</a></li>
+                <li><a href="#quienes-somos">Quienes Somos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -94,14 +95,67 @@
     </div>
 </section>
 
+<!-- Galeria -->
+<section id="galeria">
+    <h2>Galería</h2>
+    <div class="slider">
+        <div class="slider-contenedor">
+            <img src="img/598894942.jpg" alt="Imagen 1">
+            <img src="img/598894980.jpg" alt="Imagen 2">
+            <img src="img/598894983.jpg" alt="Imagen 3">
+            <img src="img/598894984.jpg" alt="Imagen 4">
+            <!-- Añade más imágenes según necesites -->
+        </div>
+    </div>
+     <!-- Botones para desplazarse -->
+     <button class="prev" onclick="moverSlide(-1)">&#10094;</button>
+     <button class="next" onclick="moverSlide(1)">&#10095;</button>
+</section>
+
+<!-- Restaurane -->
+
+
+<!-- Reserva -->
+
+
+<!-- Quienes Somos -->
+<section id="quienes-somos">
+    <!-- Video de fondo -->
+    <video autoplay muted loop playsinline id="video-fondo">
+        <source src="img/Snapinsta.app_video_AQO-TdWuqzDBImQXAf9FrA_WYBF3xW_e0C9u-_HKxFzuMgzIcYG-pTnnZA-QVLyzQd60MKh6Q5orrEQA-6v84CtxWFIn5elUP14lefg.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
+
+    <!-- Contenido de la sección -->
+    <div class="contenido">
+        <h2>Quiénes Somos</h2>
+        <p>
+            La Casa Azul Boutique Hotel se encuentra en Andújar, a 42 km de Museo Provincial de Jaén, 
+            y ofrece alojamiento con terraza, parking privado, restaurante y bar. Todas las opciones de 
+            alojamiento de este hotel de 2 estrellas tienen vistas a la ciudad y wifi gratis. Este 
+            alojamiento libre de humo está a 42 km de Estación de tren de Jaén.
+        </p>
+        <p>
+            En el hotel, todas las habitaciones disponen de escritorio. Las habitaciones del alojamiento 
+            tienen baño privado con ducha y artículos de aseo gratuitos, además de TV de pantalla plana y 
+            aire acondicionado. Algunas de las habitaciones tienen balcón. En La Casa Azul Boutique Hotel, 
+            cada habitación incluye ropa de cama y toallas.
+        </p>
+        <p class="info-adicional">
+            En el alojamiento se sirve todos los días un desayuno a la carta. ¡Te invitamos a vivir una 
+            experiencia única con nosotros!
+        </p>
+    </div>
+</section>
+
 <!-- Contacto -->
 <section id="contacto">
     <h2>Contáctanos</h2>
     <form>
-        <input type="text" placeholder="Tu nombre" required>
-        <input type="email" placeholder="Tu correo electrónico" required>
-        <textarea placeholder="Escribe tu mensaje aquí..." required></textarea>
-        <button type="submit">Enviar</button>
+    <input type="text" id="name" placeholder="Tu nombre" />
+    <input type="email" id="email" placeholder="Tu correo" />
+    <textarea id="message" placeholder="Tu mensaje"></textarea>
+    <button type="submit">Enviar</button>
     </form>
 </section>
 
@@ -135,6 +189,9 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 </script>
+
+<script src="formularioContacto.js"></script>
+
 
 </body>
 </html>
